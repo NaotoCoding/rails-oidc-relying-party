@@ -4,7 +4,7 @@ RSpec.describe "Hellos", type: :request do
   describe "ログインしていない場合" do
     it "ログイン画面にリダイレクトされる" do
       get root_path
-      expect(response).to have_http_status 302
+      expect(response).to redirect_to new_user_session_path
     end
   end
 
