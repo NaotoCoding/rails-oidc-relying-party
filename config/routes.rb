@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: :all
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   devise_scope :user do
     # 未ログイン時にアクセスした場合のリダイレクト先をdeviseに登録
     get '/users/sign_in' => 'sessions#new', as: :new_user_session
