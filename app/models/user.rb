@@ -11,5 +11,8 @@
 #  index_users_on_uid_and_provider  (uid,provider) UNIQUE
 #
 class User < ApplicationRecord
+  validates :uid, presence: true, uniqueness: { scope: :provider }
+  validates :provider, presence: true
+
   devise :authenticatable
 end

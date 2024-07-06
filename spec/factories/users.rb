@@ -12,5 +12,7 @@
 #
 FactoryBot.define do
   factory :user do
+    provider { "oidc-provider" }
+    sequence(:uid, &:to_s)
   end
 end
