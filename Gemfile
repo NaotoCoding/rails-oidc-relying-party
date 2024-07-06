@@ -13,10 +13,10 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.4"
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
-gem "tzinfo-data", platforms: %i[windows jruby]
+gem "tzinfo-data", platforms: [:windows, :jruby]
 
 group :development, :test do
-  gem "debug", platforms: %i[mri windows]
+  gem "debug", platforms: [:mri, :windows]
   gem "factory_bot_rails"
   gem "rspec-rails", "~> 6.1.0"
 end
