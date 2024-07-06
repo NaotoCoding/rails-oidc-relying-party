@@ -1,24 +1,4 @@
-# README
+https://github.com/omniauth/omniauth_openid_connect/issues/160
+https://github.com/scientist-softserv/palni-palci/commit/7f253c59f4212aef178fdb5d4f3f66da2da8775a
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+に大いに助けられた。
