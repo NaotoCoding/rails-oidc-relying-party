@@ -19,6 +19,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "annotate", "~> 3.1"
   gem "rubocop", require: false
   gem "rubocop-factory_bot", require: false
   gem "rubocop-performance", require: false
