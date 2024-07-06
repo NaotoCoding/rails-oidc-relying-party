@@ -275,6 +275,25 @@ Devise.setup do |config|
 
   config.omniauth :developer, fields: [:id], uid_field: :id
 
+  rails_oidc_provider_uri = URI("http://localhost:8080")
+  config.omniauth :openid_connect, {
+    name: :rails_oidc_provider,
+    issuer: rails_oidc_provider_uri.to_s,
+    response_mode: :form_post,
+    client_options: {
+      identifier: Rails.application.credentials.fetch(:rails_oidc_provider_client_id) { ENV['LOCAL_RAILS_OIDC_PROVIDER_CLIENT_ID'] },
+      secret: Rails.application.credentials.fetch(:rails_oidc_provider_client_secret) { ENV['LOCAL_RAILS_OIDC_PROVIDER_CLIENT_SECRET'] },
+      scheme: rails_oidc_provider_uri.scheme,
+      host: rails_oidc_provider_uri.host,
+      port: rails_oidc_provider_uri.port,
+      redirect_uri: "http://localhost:3000/users/auth/rails_oidc_provider/callback",
+      authorization_endpoint: '/oauth/authorize',
+      token_endpoint: '/oauth/token',
+      userinfo_endpoint: '/oauth/userinfo',
+      jwks_uri: "#{rails_oidc_provider_uri}/oauth/discovery/keys"
+    }
+  }
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

@@ -213,6 +213,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.8.0)
     rack (3.1.6)
+    rack-cors (2.0.2)
+      rack (>= 2.0.0)
     rack-oauth2 (2.2.1)
       activesupport
       attr_required
@@ -386,6 +388,7 @@ DEPENDENCIES
   omniauth_openid_connect
   pg (~> 1.1)
   puma (>= 5.0)
+  rack-cors
   rails (~> 7.1.3, >= 7.1.3.4)
   rspec-rails (~> 6.1.0)
   rubocop

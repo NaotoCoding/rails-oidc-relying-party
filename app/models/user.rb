@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :uid, presence: true, uniqueness: { scope: :provider }
   validates :provider, presence: true
 
-  devise :authenticatable, :omniauthable, omniauth_providers: [:developer]
+  devise :authenticatable, :omniauthable, omniauth_providers: [:developer, :rails_oidc_provider]
 
   def self.from_omniauth(auth)
     find_or_create_by(provider: auth.provider, uid: auth.uid)
